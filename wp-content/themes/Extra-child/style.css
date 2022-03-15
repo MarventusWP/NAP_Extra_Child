@@ -2,11 +2,137 @@
 Theme Name: Extra Child
 Theme URI: http://www.elegantthemes.com/gallery/extra/
 Template: Extra
-Author: Elegant Themes
-Author URI: http://www.elegantthemes.com
-Description: Extra
-Version: 4.14.7.1645808177
-Updated: 2022-02-25 13:56:17
+Author: Nota al pie
+Author URI: https://www.notaalpie.com.ar
+Description: A child theme for the Extra WordPress theme
+Version: 0.0.1
+Updated: 2022-03-15 14:41:00 GMT
+*/
+
+/* Extra inline Styles */
+#footer {
+  background-color: #fcfcfc;
+}
+
+.et_pb_widget .widgettitle,
+#top-header {
+  background-color: #1d2238;
+}
+
+#et-trending-container,
+#et-trending-label {
+  display: none;
+}
+
+header {
+  z-index: 999 !important;
+}
+
+#main-header {
+  background-image: url(http://localhost:8080/sites/notaalpie/wp-content/uploads/2021/03/Portada-WebSLVa.png) !important; /* modified */
+  background-size: contain !important; /* modified */
+}
+
+article {
+  background-size: cover, contain;
+}
+
+.first-payment-date {
+  display: none;
+}
+.et_pb_row,
+.et-l--body {
+  z-index: 0;
+}
+
+.post-thumbnail img {
+  height: 100%;
+}
+
+body {
+  background-color: #fcfcfc;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.entry-title a {
+  font-style: normal;
+}
+
+.entry-title {
+  text-transform: none;
+}
+
+.post-count {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .et_non_fixed_nav.et_transparent_nav #main-header,
+  .et_non_fixed_nav.et_transparent_nav #top-header,
+  .et_fixed_nav #main-header,
+  .et_fixed_nav #top-header {
+    position: fixed;
+    width: 100%;
+  }
+  #et-mobile-navigation nav {
+    right: 0;
+    left: auto;
+  }
+  .et_extra_mobile_menu {
+    overflow: scroll !important;
+    max-height: 83vh;
+  }
+
+  #et-menu > li > ul,
+  #et-menu li > ul,
+  #et-menu > li > ul > li > ul,
+  #et-mobile-navigation nav,
+  .et-top-search-primary-menu-item .et-top-search {
+    width: 240px;
+  }
+  #main-content {
+    padding-top: 120px;
+  }
+  .et-l--body {
+    padding-top: 120px;
+  }
+  #et_ads-3 {
+    display: none;
+  }
+}
+
+.sub-menu {
+  overflow: scroll !important;
+  max-height: 83vh;
+}
+.et_pb_column_4_4 .tabbed-post-module .tab-nav {
+  display: none;
+}
+
+.et-top-cart-total {
+  display: none;
+}
+
+#post-5196 {
+  border-top: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.woocommerce-result-count,
+.woocommerce-ordering {
+  display: none;
+}
+
+.woocommerce-page ul.products,
+.woocommerce ul.products {
+  display: none;
+}
 
 */
 
