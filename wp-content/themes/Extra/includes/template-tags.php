@@ -154,11 +154,13 @@ function et_extra_get_post_thumb( $args = array() ) {
 	}
 
 	$image_output = sprintf(
-		'<img src="%1$s" alt="%2$s"%3$s %4$s/>%5$s',
+		'<img src="%1$s" alt="%2$s"%3$s %4$s width="%5$s" height="%6$s"/>%7$s',
 		esc_attr( $thumb_src ),
 		esc_attr( $title ),
 		( !empty( $args['img_class'] ) ? sprintf( ' class="%s"', esc_attr( implode( ' ', $args['img_class'] ) ) ) : '' ),
 		( !empty( $img_style ) ? sprintf( ' style="%s"', esc_attr( $img_style ) ) : '' ),
+		$args['width'],
+		$args['height'],
 		$args['img_after']
 	);
 
