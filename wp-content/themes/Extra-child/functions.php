@@ -23,4 +23,11 @@ function cod_redirect_checkout_add_cart( $url ) {
    return $url;
 }
 
-add_filter( 'woocommerce_add_to_cart_redirect', 'cod_redirect_checkout_add_cart' );
+
+// Vendor Stylesheet Overrides
+remove_action('wp_enqueue_scripts', array($GLOBALS['et_monarch'], 'load_scripts_styles'));
+add_action('wp_enqueue_scripts', 'nap_font_overrides', 20);
+function nap_font_overrides()
+{
+	wp_enqueue_style('nap_monarch_css', get_stylesheet_directory_uri() . '/vendor/monarch/style.css', array(), ' 0.0.1');
+}
