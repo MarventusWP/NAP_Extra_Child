@@ -58,11 +58,11 @@
 							<div id="et-trending">
 
 								<!-- ET Trending Button -->
-								<a id="et-trending-button" href="#" title="">
+								<button aria-label="Menu" id="et-trending-button" title="">
 									<span></span>
 									<span></span>
 									<span></span>
-								</a>
+								</button>
 
 								<!-- ET Trending Label -->
 								<h4 id="et-trending-label">

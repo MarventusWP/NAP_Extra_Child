@@ -41,3 +41,15 @@ function nap_font_overrides()
 {
 	wp_enqueue_style('nap_monarch_css', get_stylesheet_directory_uri() . '/vendor/monarch/style.css', array(), ' 0.0.1');
 }
+
+// Custom Meta Viewport
+add_action('after_setup_theme', 'nap_remove_extra_meta_viewport');
+function nap_remove_extra_meta_viewport()
+{
+	remove_action('wp_head', 'extra_add_viewport_meta');
+}
+add_action('wp_head', 'nap_viewport_meta');
+function nap_viewport_meta()
+{
+	echo '<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=1" />';
+}

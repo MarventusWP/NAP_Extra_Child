@@ -600,7 +600,7 @@ function extra_header_search_field( $echo = true ) {
 	$output = sprintf(
 		'<form role="search" class="et-search-form" method="get" action="%1$s">
 			<input type="search" class="et-search-field" placeholder="%2$s" value="%3$s" name="s" title="%4$s" />
-			<button class="et-search-submit"></button>
+			<button aria-label="%4$s" class="et-search-submit"></button>
 		</form>',
 		esc_url( home_url( '/' ) ),
 		esc_attr_x( 'Search', 'placeholder', 'extra' ),
