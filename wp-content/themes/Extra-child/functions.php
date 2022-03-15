@@ -1,28 +1,38 @@
 <?php
 // Exit if accessed directly
-if ( !defined( 'ABSPATH' ) ) exit;
+if (!defined('ABSPATH')) exit;
 
 // BEGIN ENQUEUE PARENT ACTION
 // AUTO GENERATED - Do not modify or remove comment markers above or below:
 
-if ( !function_exists( 'chld_thm_cfg_locale_css' ) ):
-    function chld_thm_cfg_locale_css( $uri ){
-        if ( empty( $uri ) && is_rtl() && file_exists( get_template_directory() . '/rtl.css' ) )
-            $uri = get_template_directory_uri() . '/rtl.css';
-        return $uri;
-    }
+if (!function_exists('chld_thm_cfg_locale_css')) :
+	function chld_thm_cfg_locale_css($uri)
+	{
+		if (empty($uri) && is_rtl() && file_exists(get_template_directory() . '/rtl.css'))
+			$uri = get_template_directory_uri() . '/rtl.css';
+		return $uri;
+	}
 endif;
-add_filter( 'locale_stylesheet_uri', 'chld_thm_cfg_locale_css' );
+add_filter('locale_stylesheet_uri', 'chld_thm_cfg_locale_css');
 
 // END ENQUEUE PARENT ACTION
 
-add_shortcode( 'output_post_excerpt', 'get_the_excerpt' );
+add_shortcode('output_post_excerpt', 'get_the_excerpt');
 
-function cod_redirect_checkout_add_cart( $url ) {
-   $url = wc_get_page_permalink( 'checkout' ); 
-   return $url;
+function cod_redirect_checkout_add_cart($url)
+{
+	$url = wc_get_page_permalink('checkout');
+	return $url;
 }
+add_filter('woocommerce_add_to_cart_redirect', 'cod_redirect_checkout_add_cart');
 
+// NAP Custom Scripts
+add_action('wp_enqueue_scripts', 'nap_custom_scripts', 1);
+function nap_custom_scripts()
+{
+	wp_register_script('nap_custom_scripts', get_stylesheet_directory_uri() . '/scripts.js', array(), '0.0.1', true);
+	wp_enqueue_script('nap_custom_scripts');
+}
 
 // Vendor Stylesheet Overrides
 remove_action('wp_enqueue_scripts', array($GLOBALS['et_monarch'], 'load_scripts_styles'));
