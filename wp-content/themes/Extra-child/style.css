@@ -29,7 +29,7 @@ header {
 }
 
 #main-header {
-  background-image: url(http://localhost:8080/sites/notaalpie/wp-content/uploads/2021/03/Portada-WebSLVa.png) !important; /* modified */
+  background-image: url(/wp-content/uploads/2021/03/Portada-WebSLVa.png) !important; /* modified */
   background-size: contain !important; /* modified */
 }
 
